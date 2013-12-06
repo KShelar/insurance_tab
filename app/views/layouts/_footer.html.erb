@@ -1,0 +1,10 @@
+<footer>
+  <section class="wrapper">
+    <p>&copy; <%= Date.today.year %> All rights reserved | insuretab.com</p>
+    <ul class="footerlinks">
+      <li>
+      <%= link_to "Home", { action: "index", controller: "main"}%>|<%= link_to "Life Insurance" , { action: "index", controller: "main"} ,{ class: "bdright" }%></li>
+    </ul>
+    <div class="clear"></div>
+  </section>
+</footer>

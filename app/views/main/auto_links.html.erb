@@ -1,0 +1,88 @@
+  <div class="sliderpart-inner">
+  <div class="slider-innerpage">
+    <section class="wrapper"> <span class="bnarrow-wrapper"><%= image_tag("downarrow.gif", :alt => "", :title => "", :class => "bnarrow") %></span>
+      <h2>Choose One or More Companies</h2>
+      <span class="bnarrow-wrapper"><%= image_tag("downarrow.gif", :alt => "", :title => "", :class => "bnarrow-right") %></span>
+      <h3>Compare & Figure out How Much You Could Save</h3>
+      <h4> This is <span>100% Free </span> for limited time </h4>
+      <div class="contant">
+        <h4>View the Special Offers Listed Below For <%=print_today_date %>:</h4>
+        <div class="innerpage-wrapper">
+          <div class="special-offers">
+            <ul>
+              <% $i = 1 %>
+              <% $num = @i_list.length %>
+              <% while $i < $num  do %>
+              <% @i_list.each do |offer|%>
+              <li class="special-offers-li">
+                <div class="insurance-inner">
+                  <h3><%= offer["title"] %></h3>
+                    <span class="number"><%= "#{$i}" %></span>
+                    <% $i +=1 %>
+                  <div class="special-left">
+                    <a href=<%= offer["XmlListingLinkDefinition"]["href"] %> target=<%= offer["XmlListingLinkDefinition"]["target"] %> rel=<%= offer["XmlListingLinkDefinition"]["rel"] %> class="imgWrap"> <%= image_tag(offer["domainLogoUrl"], :alt => "Compare Rates / Get Quotes", :title => "Compare Rates / Get Quotes") %>
+                      <p class="bottomtext">Compare Rates / Get Quotes</p>
+                      <p class="imgDescription">Compare Rates / Get Quotes</p>
+                    </a>
+                  </div>
+                  <div class="special-right">
+
+                  <div class="right-inner">
+                      <p><%= offer["snippet"].html_safe() %></p>
+                      <a href=<%= offer["XmlListingLinkDefinition"]["href"] %> target=<%= offer["XmlListingLinkDefinition"]["target"] %> rel=<%= offer["XmlListingLinkDefinition"]["rel"] %> class="viewoffer">
+                      </a>
+                    </div>
+                      <!-- <div class="full-width">
+                         <div class="more">More About This Carrier
+                            <div class="showmain test">
+                              <div class="show">
+                                <div class="title"> Available Discounts:</div>
+                                  <ul>
+                                    <li>Accident-Free</li>
+                                    <li>Homeowner</li>
+                                    <li>Multi-Car</li>
+                                    <li>Vehicle Equipment</li>
+                                    <li>Claims-Free</li>
+                                    <li>Pay-in-Full</li>
+                                  </ul>
+                                  <div class="title"> Quoting:</div>
+                                  <ul>
+                                    <li>Online Quote</li>
+                                    <li>Emailed Quote</li>
+                                    <li>Comparison Rates</li>
+                                    <li>Mobile Quoting</li>
+                                    <li>Online Proof of Insurance</li>
+                                    <li>SR22</li>
+                                    <li>Verisign Secure</li>
+                                    <li>Buy Online</li>
+                                    <li>By Phone</li>
+                                  </ul>
+                                    <div class="title"> Customer Service:</div>
+                                  <ul>
+                                    <li>Online,Phone,Mobile App</li>
+                                  </ul>
+                                    <div class="title"> 24/7 Support:</div>
+
+                                    <ul>
+                                      <li>Yes</li>
+                                    </ul>
+                                <p>Continue here, Get FREE QUOTES</p>
+                            </div>
+                              <div class="center"><span class="arrowtop"></span></div>
+                          </div>
+                          </div>
+                          <span class="onlineapp">Online Quoting: No  Online Application: No</span>
+                      </div> -->
+                    </div>
+                </div>
+              </li>
+              <% end %>
+              <%end%>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="clear"></div>
+    </section>
+  </div>
+</div>

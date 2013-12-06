@@ -1,0 +1,73 @@
+ <script type="text/javascript">
+  function validateZipcode(currentForm) {
+    var zip_code = currentForm["zipcode"].value;
+    if(!zip_code.match(/^\d{5}$/)) {
+
+      document.getElementById("error-div").innerHTML = "please enter valid zip code";
+       return false;
+    }
+    document.getElementById("error-div").innerHTML = ""
+     return true;
+  }
+</script>
+
+<div class="sliderpart">
+  <div class="slider-inner">
+    <section class="wrapper">
+      <div class="slide-left">
+        <h2>Save up to <span>$600 </span></h2>
+        <h3>on Your Auto Insurance</h3>
+        <div class="codebg">
+          <h2>Submit Zip Code Here <br /> <span>to View Offers Now</span></h2>
+        </div>
+        <div class="mbzip">
+          <div class="zipcodebg">
+            <h2>Submit Zip Code Here <br /> <span>to View Offers Now</span></h2>
+          </div>
+          <div align="center"><span class="zipcodetringle"></span></div>
+        </div>
+      </div>
+      <div class="slide-right">
+        <form action="/auto-links" id="leadForm" name="leadForm" method="post" onsubmit="return validateZipcode(this)">
+          <h2>Enter Your Zip Code:</h2>
+          <div class="textfieldpart">
+            <input type="text" id="zipcode" name="zipcode" placeholder="Enter ZIP">
+            <input class="submit" name="Submit" type="submit" value="submit">
+          </div>
+          <div id="error-div">
+          </div>
+          <p>*Your Area Residents Save an Average of $400/Year Submit Your Zip Code Now! View <%= print_today_date %> Deals Now</p>
+        </form>
+      </div>
+      <div class="clear"></div>
+    </section>
+  </div>
+</div>
+
+<section class="wrapper">
+  <div class="bottom-box">
+    <ul>
+      <li>
+        <%= image_tag("ins1.jpg", :alt => "") %>
+        <h2>Enter your Zip</h2>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text</p>
+      </li>
+      <li>
+        <%= image_tag("ins2.jpg", :alt => "") %>
+        <h2>Insurance providers</h2>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text</p>
+      </li>
+      <li>
+        <%= image_tag("ins3.jpg", :alt => "") %>
+        <h2>Save up to $600</h2>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text</p>
+      </li>
+      <li class="last">
+        <%= image_tag("ins4.jpg", :alt => "") %>
+        <h2>Limited time offer</h2>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
